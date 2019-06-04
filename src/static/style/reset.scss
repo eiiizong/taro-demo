@@ -1,0 +1,42 @@
+page,
+button,
+cover-view,
+scroll-view,
+swiper,
+swiper-item,
+icon,
+text,
+navigator,
+textarea,
+switch,
+radio,
+picker,
+label,
+input,
+form,
+checkbox,
+checkbox-group,
+picker-view,
+audio,
+image,
+video,
+map,
+canvas,
+rich-text,
+view {
+    box-sizing: border-box;
+}
+
+page {
+    width: 100%;
+    height: 100%;
+    font-size: 30rpx;
+    background-color: #eee;
+
+    >view {
+        width: 100%;
+        min-height: 100%;
+        background-color: #eee;
+    }
+
+}
