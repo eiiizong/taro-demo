@@ -2,6 +2,9 @@ import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
 
+import Request from '../../utils/request'
+import SetNavigationBarTitle from '../../utils/setNavigationBarTitle'
+
 export default class Index extends Component {
 
   /**
@@ -15,17 +18,36 @@ export default class Index extends Component {
     navigationBarTitleText: '首页'
   }
 
-  componentWillMount() { }
-
-  componentDidMount() { }
-
-  componentWillUnmount() { }
-
-  componentDidShow() { }
-
-  componentDidHide() { }
+  componentWillMount() {
+    console.log(`================== componentWillMount =========================`);
+    const func = async () => {
+      const url = "shops";
+      const method = "POST";
+      const data = {};
+      const header = {
+        'device-type': 'wechat'
+      };
+      const shopsData = await Request(url, data, header, method);
+      console.log(`request resutl =>`, shopsData);
+    };
+    func();
+    SetNavigationBarTitle('test');
+  }
+  componentDidShow() {
+    console.log(`================== componentDidShow =========================`);
+  }
+  componentDidMount() {
+    console.log(`================== componentDidMount =========================`);
+  }
+  componentWillUnmount() {
+    console.log(`================== componentWillUnmount =========================`);
+  }
+  componentDidHide() {
+    console.log(`================== componentDidHide =========================`);
+  }
 
   render() {
+    console.log(`================== render =========================`);
     return (
       <View className='index'>
         <Text>首页test</Text>
